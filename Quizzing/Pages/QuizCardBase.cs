@@ -35,33 +35,28 @@ namespace Quizzing.Pages
         {
             Question q1 = new Question
             {
-                QuestionTitle = "How much is 1+1?",
-                Options = new List<string>() { "1", "999", "2", "Abrahan Lincoln" },
-                Answer = "2"
+                QuestionTitle = "Який наголос у слові \"разом\"?",
+                Options = new List<string> { "разОм", "рАзом" } ,
+                //Options = new List<Option>() { 
+                //    new Option { OptionTitle ="разОм", OptionReaction ="Неправильно.Попри те, що багато хто так говорить і навіть співає у піснях" }, 
+                //    new Option { OptionTitle ="рАзом", OptionReaction = "Правильно! Адже рАзом нас багато!" },
+                //    new Option { OptionTitle ="Обидва варіанти вірні", OptionReaction = "Неправильно. Вірний варіант лише один - рАзом. Запам'ятай і не помиляйся!" }
+                //},
+                Answer = "рАзом"
             };
-
             Question q2 = new Question
             {
-                QuestionTitle = "Who was the 40th President of the USA?",
-                Options = new List<string>() { "Bill Clinton", "Richard Nixon", "Jimmy Carter", "Ronald Reagan" },
-                Answer = "Ronald Reagan"
+                QuestionTitle = "Який наголос у слові \"спина\"?",
+                Options = new List<string> { "спИна", "спинА" },
+                //Options = new List<Option>() {
+                //    new Option { OptionTitle ="спИна", OptionReaction ="Маєш рацію! Тільки так - спИна!" },
+                //    new Option { OptionTitle ="спинА", OptionReaction = "Ні.Хоча так інколи говорять навіть лікарі, які лікують спИну" },
+                //    new Option { OptionTitle ="Обидва варіанти вірні", OptionReaction = "Ні! Правильний наголос лише на \"И\" - спИна!" }
+                //},
+                Answer = "спИна"
             };
 
-            Question q3 = new Question
-            {
-                QuestionTitle = "In the movie 'Scream' who is Ghost Face?",
-                Options = new List<string>() { "Billy Loomis and Stu Macher", "Dewey Riley", "Sidney Prescott", "Archie Prescott and Philip Marv" },
-                Answer = "Billy Loomis and Stu Macher"
-            };
-
-            Question q4 = new Question
-            {
-                QuestionTitle = "Who was the director of 'Scott Pilgrim vs. the World (2010)'?",
-                Options = new List<string>() { "Phil Lord", "Chris Miller", "Seth Rogan", "Edgar Wright" },
-                Answer = "Edgar Wright"
-            };
-
-            Questions.AddRange(new List<Question> { q1, q2, q3, q4 });
+            Questions.AddRange(new List<Question> { q1, q2 });
         }
     }
 }
