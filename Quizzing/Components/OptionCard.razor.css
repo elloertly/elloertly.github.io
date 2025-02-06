@@ -6,6 +6,22 @@
     cursor: pointer;
     box-shadow: -0.3px 0.3px 3px rgba(0,0,0,0.3);
 }
+.option-wrong {
+    background-color: tomato;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    box-shadow: -0.3px 0.3px 3px rgba(0,0,0,0.3);
+}
+.option-right {
+    background-color: #bbb;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    box-shadow: -0.3px 0.3px 3px rgba(0,0,0,0.3);
+}
 
     .option:hover {
         background-color: #28a745;
