@@ -9,16 +9,6 @@ namespace Quizzing.Pages
         protected int questionIndex = 0;
         protected int score = 0;
 
-        //[Parameter]
-        //public Option Option { get; set; } = new();
-        //[Parameter]
-        //public EventCallback<Option> OnOptionSelected { get; set; }
-
-        //protected async void SelectOption()
-        //{
-        //    await OnOptionSelected.InvokeAsync(Option);
-        //}
-
         protected override Task OnInitializedAsync()
         {
             LoadQuestions();
@@ -26,7 +16,7 @@ namespace Quizzing.Pages
             return base.OnInitializedAsync();
         }
 
-        protected void SelectOption(string option)
+        protected void OptionSelected(string option)
         {
             if (option == Questions[questionIndex].Answer)
             {
@@ -46,26 +36,27 @@ namespace Quizzing.Pages
             Question q1 = new Question
             {
                 QuestionTitle = "Який наголос у слові \"разом\"?",
-                Options = new List<Option>() {
-                    new Option { OptionTitle ="разОм", OptionReaction ="Неправильно.Попри те, що багато хто так говорить і навіть співає у піснях" },
-                    new Option { OptionTitle ="рАзом", OptionReaction = "Правильно! Адже рАзом нас багато!" },
-                    new Option { OptionTitle ="Обидва варіанти вірні", OptionReaction = "Неправильно. Вірний варіант лише один - рАзом. Запам'ятай і не помиляйся!" }
-                },
+                Options = new List<string> { "разОм", "рАзом" } ,
+                //Options = new List<Option>() { 
+                //    new Option { OptionTitle ="разОм", OptionReaction ="Неправильно.Попри те, що багато хто так говорить і навіть співає у піснях" }, 
+                //    new Option { OptionTitle ="рАзом", OptionReaction = "Правильно! Адже рАзом нас багато!" },
+                //    new Option { OptionTitle ="Обидва варіанти вірні", OptionReaction = "Неправильно. Вірний варіант лише один - рАзом. Запам'ятай і не помиляйся!" }
+                //},
                 Answer = "рАзом"
             };
             Question q2 = new Question
             {
                 QuestionTitle = "Який наголос у слові \"спина\"?",
-                Options = new List<Option>() {
-                    new Option { OptionTitle ="спИна", OptionReaction ="Маєш рацію! Тільки так - спИна!" },
-                    new Option { OptionTitle ="спинА", OptionReaction = "Ні.Хоча так інколи говорять навіть лікарі, які лікують спИну" },
-                    new Option { OptionTitle ="Обидва варіанти вірні", OptionReaction = "Ні! Правильний наголос лише на \"И\" - спИна!" }
-                },
+                Options = new List<string> { "спИна", "спинА" },
+                //Options = new List<Option>() {
+                //    new Option { OptionTitle ="спИна", OptionReaction ="Маєш рацію! Тільки так - спИна!" },
+                //    new Option { OptionTitle ="спинА", OptionReaction = "Ні.Хоча так інколи говорять навіть лікарі, які лікують спИну" },
+                //    new Option { OptionTitle ="Обидва варіанти вірні", OptionReaction = "Ні! Правильний наголос лише на \"И\" - спИна!" }
+                //},
                 Answer = "спИна"
             };
 
             Questions.AddRange(new List<Question> { q1, q2 });
         }
     }
-
 }

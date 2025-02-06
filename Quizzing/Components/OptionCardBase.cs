@@ -1,14 +1,13 @@
 ﻿using Microsoft.AspNetCore.Components;
-using Quizzing.Models;
 
 namespace Quizzing.Components
 {
     public class OptionCardBase : ComponentBase
     {
         [Parameter]
-        public Option Option { get; set; } = new();
+        public string Option { get; set; } = string.Empty;
         [Parameter]
-        public EventCallback<Option> OnOptionSelected { get; set; }
+        public EventCallback<string> OnOptionSelected { get; set; }
 
         protected async void SelectOption()
         {
