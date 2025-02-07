@@ -4,20 +4,29 @@
 
 <div class="container">
     <div class="quiz">
-        @if (questionIndex < Questions.Count())
+        @if (questionIndex < Cards.Count())
         {
             <div class="app-title">
                 Тест
             </div>
             <div class="quiz-header">
-                @Questions[questionIndex].QuestionTitle
+                @Cards[questionIndex].QuestionTitle
             </div>
             <div class="quiz-body">
-                @foreach (var option in Questions[questionIndex].Options)
+                @foreach (var option in Cards[questionIndex].Options)
                 {
                     <OptionCard Option="@option" OnOptionSelected="OptionSelected"></OptionCard>
                 }
             </div>
+            @if (@showAnswers)
+            {
+                <div class="quiz-header">
+                    @Cards[questionIndex].Answer
+                </div>
+                <div class="quiz-footer">
+                    <button class="next-btn" @onclick="@ShowNext">Далі</button>
+                </div>
+            }
         }
         else
         {
@@ -35,7 +44,7 @@
                 @(score > (Questions.Count() / 2) ? "Вітання" : "Спробуйте ще")
             </div>
             <div class="quiz-header">
-                <b>Ваша оцінка: @score балів!</b>
+                <b>Ваша оцінка: @score з @Questions.Count() балів!</b>
             </div>
             <div class="quiz-footer">
                 <button class="next-btn" @onclick="@RestartQuiz">Пройти тест знову</button>

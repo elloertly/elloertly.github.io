@@ -7,19 +7,23 @@ namespace Quizzing.Pages
     {
         public List<Question> Questions { get; set; } = new List<Question>();
         public List<Question> AnsweredQuestions { get; set; } = new List<Question>();
+        public List<Question> Cards { get; set; } = new List<Question>();
+
         protected int questionIndex = 0;
         protected int score = 0;
+        protected bool showAnswers = false;
 
         protected override Task OnInitializedAsync()
         {
             LoadQuestions();
+            Cards = new List<Question>(Questions);
 
             return base.OnInitializedAsync();
         }
 
         protected void OptionSelected(Option option)
         {
-            var currentQuestion = Questions[questionIndex];
+            var currentQuestion = Cards[questionIndex];
             var selectedOption = currentQuestion.Options.Where(x => x.OptionTitle == option.OptionTitle).First();
             
             if (option.IsRight)
@@ -34,18 +38,28 @@ namespace Quizzing.Pages
 
         protected void RestartQuiz()
         {
+            LoadQuestions();
+            Cards = new List<Question>(Questions);
+            AnsweredQuestions = new List<Question>();
             score = 0;
             questionIndex = 0;
+            showAnswers = false;
         }
-        
+        protected void ShowNext()
+        {
+            questionIndex++;
+        }
+
         protected void ShowAnswers()
         {
-            Questions = AnsweredQuestions;
+            Cards = AnsweredQuestions.ToList();
             questionIndex = 0;
+            showAnswers = true;
         }
 
         private void LoadQuestions()
         {
+            Questions = new List<Question>();
             Question q1 = new Question
             {
                 QuestionTitle = "Який наголос у слові \"разом\"?",
@@ -58,7 +72,7 @@ namespace Quizzing.Pages
                     new Option { 
                         OptionTitle ="рАзом", 
                         OptionReaction = "Правильно! Адже рАзом нас багато!",
-                        IsRight = false,
+                        IsRight = true,
                         IsSelected = false
                     },
                     new Option { 
@@ -75,7 +89,7 @@ namespace Quizzing.Pages
                     new Option { 
                         OptionTitle ="спИна", 
                         OptionReaction ="Маєш рацію! Тільки так - спИна!",
-                        IsRight = false,
+                        IsRight = true,
                         IsSelected = false},
                     new Option {
                         OptionTitle ="спинА", 
