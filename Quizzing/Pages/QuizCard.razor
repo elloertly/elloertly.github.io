@@ -32,13 +32,16 @@
                 }
             </div>
             <div class="app-title">
-                @(score > (Questions.Count() / 2) ? "Congratulation" : "Better Luck Next Time")
+                @(score > (Questions.Count() / 2) ? "Вітання" : "Спробуйте ще")
             </div>
             <div class="quiz-header">
-                <b>You scored @score points!</b>
+                <b>Ваша оцінка: @score балів!</b>
             </div>
             <div class="quiz-footer">
-                <button class="next-btn" @onclick="@RestartQuiz">Play Again</button>
+                <button class="next-btn" @onclick="@RestartQuiz">Пройти тест знову</button>
+            </div>
+            <div class="quiz-footer">
+                <button class="next-btn" @onclick="@ShowAnswers">Показати відповіді</button>
             </div>
         }
     </div>
