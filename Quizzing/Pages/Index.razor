@@ -1,5 +1,20 @@
 ﻿@page "/"
 
 <PageTitle>Навчальний матеріал</PageTitle>
-<img src="images\futurama-hypnotoad.gif" />
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CYHFtuRWRQo?si=quaX3G-guv7Iel5P" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<Carousel>
+    <CarouselItem Active = "true">
+        <Image Src="images/Slide_1.png"/>      
+    </CarouselItem>
+    <CarouselItem>
+        <Image src="images/Slide_2.jpg" />
+    </CarouselItem>
+    <CarouselItem>
+        <Image src="images/Slide_3.jpg" />
+        <CarouselCaption>
+            <p>
+                <iframe width="560" height="315" align="right" src="https://www.youtube.com/embed/CYHFtuRWRQo?si=quaX3G-guv7Iel5P" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </p>
+        </CarouselCaption>
+    </CarouselItem>
+</Carousel>
