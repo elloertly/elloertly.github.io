@@ -29,23 +29,24 @@
             }
         }
         else
-        {
+        {           
             <div class="app-title">
-                @if (score > (Questions.Count / 2))
-                {
-                    <img src="https://img.icons8.com/ios/100/000000/prize--v1.png" />
-                }
-                else
-                {
-                    <img src="https://img.icons8.com/color/96/000000/lose.png" />
-                }
+                <b> @score з @Questions.Count() балів</b>
             </div>
             <div class="app-title">
-                @(score > (Questions.Count() / 2) ? "Вітання" : "Спробуйте ще")
-            </div>
-            <div class="quiz-header">
-                <b>Ваша оцінка: @score з @Questions.Count() балів!</b>
-            </div>
+               @if (score == 10){
+                   <p> Та ти профі! Жодної помилки. До речі, знаєш наголос у слові помилка?</p>
+               }
+               else if (7 <= score && score <= 9){
+                    <p>Майже профі! Ну ще трохи, і можна інших вчити!</p>
+               }
+               else if (4 <= score && score <= 6){
+                    <p>Не засмучуйся! Дещо таки знаєш!</p>
+               }
+               else if (score <= 3){
+                    <p>Далеко до ідеалу, але є куди прагнути!</p>
+               }
+            </div>           
             <div class="quiz-footer">
                 <button class="next-btn" @onclick="@RestartQuiz">Пройти тест знову</button>
             </div>
