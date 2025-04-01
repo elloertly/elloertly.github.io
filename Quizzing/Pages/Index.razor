@@ -2,15 +2,15 @@
 
 <PageTitle>Навчальний матеріал</PageTitle>
 
-<Carousel>
-    <CarouselItem Active = "true">
-        <Image Src="images/Slide_1.png"/>      
+<Carousel Crossfade="true" Loop="false">
+    <CarouselItem Active="true">
+        <Image Src="images/Slide_1.png" />
     </CarouselItem>
     <CarouselItem>
         <Image src="images/Slide_2.jpg" />
         <CarouselCaption>
             <p>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/ujOONDy1dR4?si=sXFyZKHIMnjGfVRG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="630" height="380" src="https://www.youtube.com/embed/ujOONDy1dR4?si=sXFyZKHIMnjGfVRG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </p>
         </CarouselCaption>
     </CarouselItem>
@@ -18,15 +18,20 @@
         <Image src="images/Slide_3.jpg" />
         <CarouselCaption>
             <p>
-                <iframe width="560" height="315" align="right" src="https://www.youtube.com/embed/CYHFtuRWRQo?si=quaX3G-guv7Iel5P" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="580" height="350" align="right" style="margin-right:-50px" src="https://www.youtube.com/embed/CYHFtuRWRQo?si=quaX3G-guv7Iel5P" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </p>
         </CarouselCaption>
     </CarouselItem>
     <CarouselItem>
         <Image src="images/Slide_4.jpg" />
     </CarouselItem>
-    <CarouselItem>
+    <CarouselItem ShowNextControl="false">
         <Image src="images/Slide_5.jpg" />
+        <CarouselCaption>
+            <NavLink class="nav-link" href="quizcard">
+                <h1 style="margin-left:-98px !important; margin-bottom:50px !important; font-size:48px !important; color:black;">Пройти тест</h1>
+            </NavLink>
+        </CarouselCaption>
     </CarouselItem>
 
 </Carousel>

@@ -15,7 +15,7 @@
     box-shadow: -0.3px 0.3px 3px rgba(0,0,0,0.3);
 }
 .option-right {
-    background-color: #bbb;
+    background-color: forestgreen;
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 8px;
@@ -24,7 +24,7 @@
 }
 
     .option:hover {
-        background-color: #28a745;
+        background-color: dodgerblue;
         color:#fff;
         border-radius: 3px;
         padding: 10px;
